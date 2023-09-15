@@ -1,5 +1,5 @@
 # Maintainer: Julian Pollinger <julian@pollinger.dev>
-# Based on cadical package by Kyle Keen <keenerd@gmail.com>
+# Contributor: Kyle Keen <keenerd@gmail.com>
 
 _pkgname=cadical
 pkgname=$_pkgname-pic
