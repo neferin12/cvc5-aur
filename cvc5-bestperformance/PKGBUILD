@@ -6,9 +6,9 @@ pkgdesc="An open-source automatic theorem prover for Satisfiability Modulo Theor
 arch=(x86_64)
 url="https://github.com/cvc5/cvc5"
 license=('GPLv3')
-depends=('cryptominisat5' 'glpk-cut-log' 'symfpu-cvc5' 'libpoly' 'editline')
+depends=('cryptominisat5' 'glpk-cut-log' 'symfpu-cvc5' 'libpoly' 'editline' 'cadical-pic' 'cln')
 optdepends=('python-cvc5: Python bindings for cvc5')
-makedepends=('bash' 'gcc' 'cmake' 'python3' 'python-tomli' 'python-pyparsing' 'python-scikit-build' 'cython' 'java-environment' 'wget' 'cln')
+makedepends=('bash' 'gcc' 'cmake' 'python3' 'python-tomli' 'python-pyparsing' 'python-scikit-build' 'cython' 'java-environment')
 source=("$url/archive/refs/tags/cvc5-$pkgver.tar.gz")
 sha256sums=('9b61c6e27609db154657f105d7271a03b7798047b3aab1ca2ab58910fac788ba')
 provides=("cvc5=$pkgver")
