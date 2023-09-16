@@ -10,7 +10,7 @@ arch=('x86_64')
 url="https://github.com/SRI-CSL/$_pkgname"
 license=('LGPL')
 depends=('gmp')
-makedepends=('cmake' 'ninja' 'python')
+makedepends=('cmake' 'ninja' 'python' 'git')
 source=("git+https://github.com/SRI-CSL/$_pkgname.git")
 sha512sums=('SKIP')
 provides=("$_pkgname=$pkgver")

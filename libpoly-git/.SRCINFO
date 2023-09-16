@@ -8,6 +8,7 @@ pkgbase = libpoly-git
 	makedepends = cmake
 	makedepends = ninja
 	makedepends = python
+	makedepends = git
 	depends = gmp
 	provides = libpoly=0.1.7.r217.g3b0381f
 	conflicts = libpoly
