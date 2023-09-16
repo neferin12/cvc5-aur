@@ -17,7 +17,7 @@ conflicts=('cvc5-bin' 'cvc5-bestperformance')
 
 build(){
 	cd "$srcdir/$pkgname-cvc5-$pkgver"
-	./configure.sh --prefix=$pkgdir/usr --java-bindings --editline
+	./configure.sh --prefix=/usr --java-bindings --editline
 	cd build
 	make
 }
@@ -30,6 +30,7 @@ check(){
 
 package() {
 	cd "$srcdir/$pkgname-cvc5-$pkgver"
+	install -Dm644 COPYING "$pkgdir/usr/share/licenses/cvc5/LICENSE"
 	cd build
-	make install
+	DESTDIR=$pkgdir/usr make install
 }
