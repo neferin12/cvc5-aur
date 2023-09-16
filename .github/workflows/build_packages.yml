@@ -14,9 +14,9 @@ jobs:
             libpoly-git, 
             python-cvc5, 
             symfpu-cvc5, 
-            # cvc5, 
-            # cvc5-bestperformance, 
-            # cvc5-bin
+            cvc5, 
+            cvc5-bestperformance, 
+            cvc5-bin
           ]
     runs-on: ubuntu-latest
     steps:
@@ -37,6 +37,7 @@ jobs:
       with:
         path: ${{ steps.makepkg.outputs.pkgfile0 }}
   aur-publish:
+    if: github.event_name != 'pull_request'
     needs: [build-packages]
     runs-on: ubuntu-latest
     strategy:
@@ -49,9 +50,9 @@ jobs:
             libpoly-git, 
             python-cvc5, 
             symfpu-cvc5, 
-            # cvc5, 
-            # cvc5-bestperformance, 
-            # cvc5-bin
+            cvc5, 
+            cvc5-bestperformance, 
+            cvc5-bin
           ]
     steps:
       - uses: actions/checkout@v3
