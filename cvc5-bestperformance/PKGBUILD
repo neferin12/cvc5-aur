@@ -22,13 +22,13 @@ build(){
 }
 
 check(){
-	cd "$srcdir/$pkgname-cvc5-$pkgver"
+	cd "$srcdir/cvc5-cvc5-$pkgver"
 	cd build
 	make test
 }
 
 package() {
-	cd "$srcdir/$pkgname-cvc5-$pkgver"
+	cd "$srcdir/cvc5-cvc5-$pkgver"
 	cd build
 	make install
 }
