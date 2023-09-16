@@ -12,11 +12,15 @@ pkgbase = cvc5
 	makedepends = python3
 	makedepends = python-tomli
 	makedepends = python-pyparsing
-	makedepends = cadical-pic
 	makedepends = python-scikit-build
 	makedepends = cython
 	makedepends = java-environment
 	depends = gmp
+	depends = cadical-pic
+	depends = libpoly
+	depends = symfpu-cvc5
+	depends = editline
+	optdepends = python-cvc5: Python bindings for cvc5
 	provides = cvc5=1.0.8
 	conflicts = cvc5-bin
 	conflicts = cvc5-bestperformance

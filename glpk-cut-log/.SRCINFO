@@ -9,6 +9,8 @@ pkgbase = glpk-cut-log
 	makedepends = autoconf
 	makedepends = libtool
 	makedepends = patch
+	provides = glpk=1.0.8
+	conflicts = glpk
 	source = https://github.com/cvc5/cvc5/archive/refs/tags/cvc5-1.0.8.tar.gz
 	source = https://ftp.gnu.org/gnu/glpk/glpk-4.52.tar.gz
 	sha256sums = 9b61c6e27609db154657f105d7271a03b7798047b3aab1ca2ab58910fac788ba
