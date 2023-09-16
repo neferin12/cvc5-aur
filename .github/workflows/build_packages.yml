@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   build-packages:
     strategy:
+      fail-fast: false
       matrix:
         package: [cadical-pic, glpk-cut-log, libpoly-git, python-cvc5, symfpu-cvc5, cvc5, cvc5-bestperformance, cvc5-bin]
     runs-on: ubuntu-latest
