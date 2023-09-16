@@ -11,7 +11,7 @@ optdepends=('python-cvc5: Python bindings for cvc5')
 makedepends=('bash' 'gcc' 'cmake' 'python3' 'python-tomli' 'python-pyparsing' 'python-scikit-build' 'cython' 'java-environment' 'wget' 'cln')
 source=("$url/archive/refs/tags/cvc5-$pkgver.tar.gz")
 sha256sums=('9b61c6e27609db154657f105d7271a03b7798047b3aab1ca2ab58910fac788ba')
-provides=("cvc5")
+provides=("cvc5=$pkgver")
 conflicts=('cvc5-bin' 'cvc5')
 
 build(){

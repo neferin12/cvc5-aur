@@ -11,7 +11,7 @@ source=("$url/archive/refs/tags/cvc5-$pkgver.tar.gz" "https://ftp.gnu.org/gnu/gl
 sha256sums=('9b61c6e27609db154657f105d7271a03b7798047b3aab1ca2ab58910fac788ba'
             '9a5dab356268b4f177c33e00ddf8164496dc2434e83bd1114147024df983a3bb')
 conflicts=('glpk')
-provides=("glpk")
+provides=("glpk=$pkgver")
 
 prepare() {
   _patch_file="$srcdir/cvc5-cvc5-$pkgver/contrib/glpk-cut-log.patch"
