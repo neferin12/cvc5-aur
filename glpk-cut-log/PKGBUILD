@@ -34,8 +34,7 @@ build() {
 
 }
 
-package_glpk-cut-log() {
+package() {
   cd "$srcdir/glpk-$_glpkver"
   make install
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/glpk/LICENSE"
 }
