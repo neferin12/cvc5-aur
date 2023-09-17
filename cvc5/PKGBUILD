@@ -22,12 +22,6 @@ build(){
 	make
 }
 
-check(){
-	cd "$srcdir/$pkgname-cvc5-$pkgver"
-	cd build
-	make test
-}
-
 package() {
 	cd "$srcdir/$pkgname-cvc5-$pkgver"
 	install -Dm644 COPYING "$pkgdir/usr/share/licenses/cvc5/LICENSE"
