@@ -20,6 +20,7 @@ pkgbase = cvc5
 	depends = libpoly-git
 	depends = symfpu-cvc5
 	depends = libedit
+	depends = libbsd
 	optdepends = python-cvc5: Python bindings for cvc5
 	provides = cvc5=1.0.8
 	conflicts = cvc5-bin
