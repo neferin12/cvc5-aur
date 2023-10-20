@@ -9,9 +9,9 @@ jobs:
       matrix:
         package: 
           [
-            # cadical-pic, 
-            # glpk-cut-log, 
-            # libpoly-git, 
+            cadical-pic, 
+            glpk-cut-log, 
+            libpoly-git, 
             python-cvc5, 
             symfpu-cvc5, 
             # cvc5, 
@@ -91,6 +91,8 @@ jobs:
       - name: Add packages to repo
         run: |
           cp -f /tmp/pkgfiles/* ./arch/x86_64/
+          cd arch/x86_64
+          repo-add -p -R repo.db.tar.gz *.pkg.tar.zst
       - name: Commit changes
         run: |
             git config --global --add safe.directory /__w/cvc5-aur/cvc5-aur
