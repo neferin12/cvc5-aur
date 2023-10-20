@@ -74,15 +74,15 @@ jobs:
     container: 
       image: archlinux:base-devel
     steps:
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm git
       - uses: actions/checkout@v4
         with:
           repository: 'neferin12/arch-repo'
           ref: 'main'
           token: ${{ secrets.PAT_TOKEN }}
-      - name: Install dependencies
-        run: |
-          pacman -Syu --noconfirm
-          pacman -S --noconfirm git
       - name: Download packages
         uses: actions/download-artifact@v3
         with:
