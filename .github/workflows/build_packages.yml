@@ -86,7 +86,7 @@ jobs:
           path: /tmp/pkgfiles
       - name: Add packages to repo
         run: |
-          cp -f /tmp/pkgfiles/* ./repo/x86_64/
+          cp -f /tmp/pkgfiles/* ./x86_64/
       - name: Commit changes
         run: |
             git config --global user.name 'GitHub Actions [Bot]'
