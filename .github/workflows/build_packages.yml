@@ -92,7 +92,7 @@ jobs:
         run: |
           cp -f /tmp/pkgfiles/* ./arch/x86_64/
           cd arch/x86_64
-          repo-add -p -R repo.db.tar.gz *.pkg.tar.zst
+          repo-add -p -R pollinger.db.tar.gz *.pkg.tar.zst
       - name: Commit changes
         run: |
             git config --global --add safe.directory /__w/cvc5-aur/cvc5-aur
