@@ -9,9 +9,9 @@ jobs:
       matrix:
         package: 
           [
-            cadical-pic, 
-            glpk-cut-log, 
-            libpoly-git, 
+            # cadical-pic, 
+            # glpk-cut-log, 
+            # libpoly-git, 
             python-cvc5, 
             symfpu-cvc5, 
             # cvc5, 
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-packages]
     container: 
-      image: archlinux/base
+      image: archlinux:base-devel
     steps:
       - uses: actions/checkout@v4
         with:
