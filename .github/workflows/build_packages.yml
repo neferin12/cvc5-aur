@@ -93,8 +93,8 @@ jobs:
           cp -f /tmp/pkgfiles/* ./arch/x86_64/
       - name: Commit changes
         run: |
-            git add arch
             git config --global --add safe.directory /__w/cvc5-aur/cvc5-aur
+            git add arch
             git config --global user.name 'GitHub Actions [Bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
             git commit -am "Updated packages"
