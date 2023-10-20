@@ -80,7 +80,7 @@ jobs:
           pacman -S --noconfirm git
       - uses: actions/checkout@v4
         with:
-          repository: 'neferin12/arch-repo'
+          repository: 'neferin12/repos'
           ref: 'main'
           token: ${{ secrets.PAT_TOKEN }}
       - name: Download packages
@@ -90,9 +90,10 @@ jobs:
           path: /tmp/pkgfiles
       - name: Add packages to repo
         run: |
-          cp -f /tmp/pkgfiles/* ./x86_64/
+          cp -f /tmp/pkgfiles/* ./arch/x86_64/
       - name: Commit changes
         run: |
+            git add arch
             git config --global --add safe.directory /__w/cvc5-aur/cvc5-aur
             git config --global user.name 'GitHub Actions [Bot]'
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
