@@ -14,9 +14,9 @@ jobs:
             libpoly-git, 
             python-cvc5, 
             symfpu-cvc5, 
-            # cvc5, 
-            # cvc5-bestperformance, 
-            # cvc5-bin
+            cvc5, 
+            cvc5-bestperformance, 
+            cvc5-bin
           ]
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +38,7 @@ jobs:
         name: pkgfiles
         path: ${{ steps.makepkg.outputs.pkgfile0 }}
   aur-publish:
-    if: github.event_name != 'pull_request' && false
+    if: github.event_name != 'pull_request'
     needs: [build-packages]
     runs-on: ubuntu-latest
     strategy:
@@ -69,6 +69,7 @@ jobs:
           ssh_keyscan_types: rsa,dsa,ecdsa,ed25519
           allow_empty_commits: false
   publish-to-repo:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: [build-packages]
     container: 
