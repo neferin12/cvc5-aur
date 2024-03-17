@@ -21,7 +21,6 @@ pkgbase = cvc5
 	depends = symfpu-cvc5
 	depends = libedit
 	depends = libbsd
-	depends = gmp
 	optdepends = python-cvc5: Python bindings for cvc5
 	provides = cvc5=1.1.2
 	conflicts = cvc5-bin
