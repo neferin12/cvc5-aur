@@ -41,7 +41,7 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: [build-packages]
     secrets: inherit
-    uses: neferin12/cvc5-aur/.github/workflows/aur_publish.yml
+    uses: ./.github/workflows/aur_publish.yml
   publish-to-repo:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
