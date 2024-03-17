@@ -1,0 +1,36 @@
+name: "AUR Publish"
+
+on:
+    workflow_dispatch:
+    workflow_call:
+
+jobs:
+    aur-publish:
+        runs-on: ubuntu-latest
+        strategy:
+          fail-fast: false
+          matrix:
+            package: 
+              [
+                cadical-pic, 
+                glpk-cut-log, 
+                libpoly-git, 
+                python-cvc5, 
+                symfpu-cvc5, 
+                cvc5, 
+                cvc5-bestperformance, 
+                cvc5-bin
+              ]
+        steps:
+          - uses: actions/checkout@v3
+          - name: Publish AUR package ${{ matrix.package }}
+            uses: KSXGitHub/github-actions-deploy-aur@v2.7.0
+            with:
+              pkgname: ${{ matrix.package }}
+              pkgbuild: ./${{ matrix.package }}/PKGBUILD
+              commit_username: ${{ secrets.AUR_USERNAME }}
+              commit_email: ${{ secrets.AUR_EMAIL }}
+              ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+              commit_message: Update package
+              ssh_keyscan_types: rsa,dsa,ecdsa,ed25519
+              allow_empty_commits: false
