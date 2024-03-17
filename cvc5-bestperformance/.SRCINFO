@@ -22,6 +22,7 @@ pkgbase = cvc5-bestperformance
 	depends = cadical-pic
 	depends = cln
 	depends = libbsd
+	depends = gmp
 	optdepends = python-cvc5: Python bindings for cvc5
 	provides = cvc5=1.1.2
 	conflicts = cvc5-bin
