@@ -12,7 +12,6 @@ jobs:
           matrix:
             package: 
               [
-                cadical-pic, 
                 glpk-cut-log, 
                 libpoly-git, 
                 python-cvc5, 
