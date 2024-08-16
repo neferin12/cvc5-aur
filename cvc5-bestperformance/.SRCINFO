@@ -15,6 +15,7 @@ pkgbase = cvc5-bestperformance
 	makedepends = cython
 	makedepends = java-environment
 	makedepends = mold
+	makedepends = python-pexpect
 	depends = cryptominisat
 	depends = glpk-cut-log
 	depends = symfpu-cvc5

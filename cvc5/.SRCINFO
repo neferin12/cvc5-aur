@@ -16,6 +16,7 @@ pkgbase = cvc5
 	makedepends = cython
 	makedepends = java-environment
 	makedepends = mold
+	makedepends = python-pexpect
 	depends = gmp
 	depends = cadical
 	depends = libpoly
