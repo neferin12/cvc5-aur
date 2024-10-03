@@ -75,3 +75,40 @@ jobs:
             git config --global user.email 'github-actions[bot]@users.noreply.github.com'
             git commit -am "Updated packages"
             git push
+  publish-to-gitea-repo:
+    if: ${{ github.event_name != 'pull_request'}}
+    runs-on: ubuntu-latest
+    needs: [build-packages]
+    container: 
+      image: archlinux:base-devel
+    steps:
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm git git-lfs
+          git lfs install
+      - name: Download packages
+        uses: actions/download-artifact@v3
+        with:
+          name: pkgfiles
+          path: /tmp/pkgfiles
+      - name: Clone repo
+        env:
+          EXTERNAL_TOKEN : ${{ secrets.EXTERNAL_TOKEN }}
+        run: |
+          git clone https://julian:$EXTERNAL_TOKEN@git.pollinger.dev/julian/repo.git
+      - name: Add packages to repo
+        run: |
+          cd repo
+          cp -f /tmp/pkgfiles/* ./arch/x86_64/
+          cd arch/x86_64
+          repo-add -p -R pollinger.db.tar.gz *.pkg.tar.zst
+      - name: Commit changes
+        run: |
+            cd repo
+            git config --global --add safe.directory $(pwd)
+            git add arch
+            git config --global user.name 'GitHub Actions [Bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            git commit -am "Updated packages"
+            git push
