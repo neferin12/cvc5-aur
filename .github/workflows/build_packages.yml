@@ -32,7 +32,7 @@ jobs:
         echo "Successfully created the following package archive"
         echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
     - name: Upload Package Archive
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: pkgfiles
         path: ${{ steps.makepkg.outputs.pkgfile0 }}
@@ -58,7 +58,7 @@ jobs:
           ref: 'main'
           token: ${{ secrets.PAT_TOKEN }}
       - name: Download packages
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pkgfiles
           path: /tmp/pkgfiles
@@ -88,7 +88,7 @@ jobs:
           pacman -S --noconfirm git git-lfs
           git lfs install
       - name: Download packages
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pkgfiles
           path: /tmp/pkgfiles
