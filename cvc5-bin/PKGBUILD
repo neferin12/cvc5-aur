@@ -1,6 +1,6 @@
 # Maintainer: Julian Pollinger <julian@pollinger.dev>
 pkgname=cvc5-bin
-pkgver=1.2.0
+pkgver=1.2.1
 pkgrel=1
 pkgdesc="An open-source automatic theorem prover for Satisfiability Modulo Theories (SMT) problems"
 arch=('x86_64' 'aarch64')
@@ -10,8 +10,8 @@ depends=('cadical')
 makedepends=('bash')
 source_x86_64=("$pkgname-$pkgver.zip::$url/releases/download/cvc5-$pkgver/cvc5-Linux-x86_64-static.zip")
 source_aarch64=("$pkgname-$pkgver.zip::$url/releases/download/cvc5-$pkgver/cvc5-Linux-arm64-static.zip")
-sha256sums_x86_64=('d18f174ff9a11923c32c3f871f844ed16bd77a28f51050b8e7c8d821c98a1c2e')
-sha256sums_aarch64=('d18f174ff9a11923c32c3f871f844ed16bd77a28f51050b8e7c8d821c98a1c2e')
+sha256sums_x86_64=('6d44abc233980a14d72cc5809287d27c3335b1d6ee863381d0b5ffcbd0d8de56')
+sha256sums_aarch64=('6d44abc233980a14d72cc5809287d27c3335b1d6ee863381d0b5ffcbd0d8de56')
 provides=("cvc5=$pkgver")
 conflicts=('cvc5')
 

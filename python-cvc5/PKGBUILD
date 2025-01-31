@@ -1,7 +1,7 @@
 # Maintainer: Julian Pollinger <julian@pollinger.dev>
 pkgname=python-cvc5
 _name=${pkgname#python-}
-pkgver=1.2.0
+pkgver=1.2.1
 pkgrel=1
 pkgdesc="Python bindings for cvc5"
 arch=('x86_64')
