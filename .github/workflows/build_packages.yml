@@ -36,6 +36,7 @@ jobs:
       with:
         name: pkgfiles
         path: ${{ steps.makepkg.outputs.pkgfile0 }}
+        overwrite: true
   aur-publish:
     if: github.event_name != 'pull_request'
     needs: [build-packages]
