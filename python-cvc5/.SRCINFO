@@ -8,6 +8,7 @@ pkgbase = python-cvc5
 	makedepends = python-build
 	makedepends = python-installer
 	makedepends = python-wheel
+	makedepends = python
 	source = https://raw.githubusercontent.com/cvc5/cvc5_pythonic_api/c1c83ba39e1526c87051b64f12ebffc29ffd2850/LICENSE.txt
 	sha256sums = ec92cf71bf850a6ad6d068d1539d1262a28220d58d5c053e530cec0e54080d3c
 	source_x86_64 = https://files.pythonhosted.org/packages/cp313/c/cvc5/cvc5-1.3.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl

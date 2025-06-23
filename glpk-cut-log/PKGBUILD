@@ -22,6 +22,8 @@ prepare() {
 }
 
 build() {
+  export CFLAGS="$CFLAGS -std=c11"
+
   cd "$srcdir/glpk-$_glpkver"
 
   libtoolize
